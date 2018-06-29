@@ -13,10 +13,18 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
+    var arr = Object.keys(storage); //[0,1,2];
+    var first = arr[0];
+    var popped = storage[first];
+    delete storage[first];
+
+     size --; 
+
+     return popped;
   };
 
   someInstance.size = function() {
-    return size;
+    return Math.max(0, size);
   };
 
   return someInstance;
