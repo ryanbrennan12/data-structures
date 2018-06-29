@@ -4,6 +4,7 @@ var Stack = function() {
   var obj = {};
   obj.storage = {};
   obj = _.extend(obj, stackMethods);
+  obj.key = 0;
 
   return obj;
 };
@@ -11,6 +12,11 @@ var Stack = function() {
 var stackMethods = {
 	size: function() {
 		return Object.keys(this.storage).length;
+	},
+
+	push: function(value) {
+		this.storage[this.key] = value;
+		this.key ++;
 	}
 };
 
