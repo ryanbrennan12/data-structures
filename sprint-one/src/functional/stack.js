@@ -4,12 +4,12 @@ var Stack = function() {
   // Use an object with numeric keys to store values
   //come back to do with Object.keys()
   var storage = {};
-  var size = 0;
+  var key = 0
 
   // Implement the methods below
   someInstance.push = function(value) {
-    storage[size] = value;
-    size ++;
+    storage[key] = value;
+    key ++;
 
   };
 
@@ -19,14 +19,13 @@ var Stack = function() {
     var popped = storage[last]
    
     delete storage[last]////need to use brackets bc it is a number
-    size --;
 
     return popped;
 
   };
 
   someInstance.size = function() {
-    return Math.max(0, size);
+    return Object.keys(storage).length;
   };
 
   return someInstance;
