@@ -16,6 +16,15 @@ var queueMethods = {
 	enqueue: function(value) {
 		this.storage[this.key] = value;
 		this.key ++;
+	},
+
+	dequeue: function() {
+		var arr = Object.keys(this.storage)
+		var first = arr[0];
+		var popped = this.storage[first]
+		delete this.storage[first];
+
+		return popped;
 	}
 };
 
