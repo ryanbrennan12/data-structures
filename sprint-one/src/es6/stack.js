@@ -13,6 +13,11 @@ class Stack {
     this.key ++;
   }
   pop() {
-    
+    var arr = Object.keys(this.storage);
+    var last = arr[arr.length - 1];
+    var popped = this.storage[last];
+    delete this.storage[last];
+
+    return popped;
   }
 }
