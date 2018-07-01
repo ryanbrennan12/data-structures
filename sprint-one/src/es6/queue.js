@@ -8,6 +8,18 @@ class Queue {
   size() {
   	return Object.keys(this.storage).length;
   }
-  
+  enqueue(value) {
+  	this.storage[this.key] = value;
+  	this.key ++;
+  }
+  dequeue() {
+  	var arr = Object.keys(this.storage);
+  	var first = arr[0];
+  	var popped = this.storage[first];
+  	delete this.storage[first];
 
+  	return popped;
+  }
+  
 }
+
